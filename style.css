@@ -12,18 +12,23 @@ body {
     height: 100%;
 }
 .head {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 200px;
-    margin-top: 75px;
+    padding: 25px 200px 0 200px;
     width: 100%;
+    background-color: #944b6e;
+    z-index: 3;
+    transition: 1s;
+}
+.head.hide {
+    transform: translateY(-250px);
 }
 .head__icon {
     width: 113px;
 }
 .head__search {
-    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
@@ -56,25 +61,61 @@ body {
     95%{transform: rotate(0deg);}
 }
 .head__alert {
-    transition: 1s;
     display: none;
-    /* transform: translateX(500px); */
     position: absolute;
-    font-family:  "Roboto", sans-serif;
+    text-align: center;
+    top: -60px;
     width: 250px;
     height: 50px;
-    background-color: #2c2142;
-    color: #fff;
     border-radius: 10px;
     padding: 10px;
-    text-align: center;
+    background-color: #2c2142;
+    color: #fff;
     font-size: 25px;
+    font-family:  "Roboto", sans-serif;
+    transition: 1s;
+    opacity: 0;
+    animation: 6s alert linear;
+}
+@keyframes alert {
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+}
+.head__list {
+    display: none;
+    transition: 1s;
+    position: absolute;
+    top: 50px;
+    width: 300px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.head__list.new {
+    display: block;
+}
+.head__point {
+    font-family:  "Roboto", sans-serif;
+    border-radius: 5px;
+    background-color: #d45b78;
+    color: #fff;
+    margin-top: 5px;
+    padding: 3px 10px;
+    transition: 0.5s;
+}
+.head__point:hover {
+    cursor: pointer;
+    background-color: #b43653;
 }
 
 .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 90px;
 }
 .title__img {
     width: 1120px;
@@ -318,14 +359,12 @@ body {
 
 @media (max-width: 400px) {
     .head {
-        padding: 0 15px;
-    }
-    .head__icon {
-        width: 80px;
+        padding: 20px 15px;
     }
     .head__icon {
         padding: 5px;
         font-size: 20px;
+        width: 80px;
     }
     .title {
         padding: 0 15px;
@@ -414,10 +453,6 @@ body {
     .head {
         flex-direction: column;
         align-items: center;
-    }
-    .head__icon {
-        width: 150px;
-        margin-bottom: 40px;
     }
     .video {
         height: 300px;

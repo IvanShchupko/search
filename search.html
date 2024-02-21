@@ -5,16 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
-    <link rel="stylesheet" href="./search.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./content/Callmar-icon.png" type="image/x-icon">
 </head>
 <body>
     <header class="head">
         <a href="./index.html" class="head__link">
             <img src="./content/Callmar-icon.png" alt="" class="head__icon">
         </a>
+        <div class="head__search">
+            <input type="text" placeholder="Пошук..." class="head__inp">
+            <button class="head__lupe">
+                <img src="./content/lupe.png" alt="" class="head__img">
+            </button>
+            <p class="head__alert">Введіть існуючу річ!</p>
+            <ul class="head__list">
+                <li class="head__point" id="firstP">title</li>
+                <li class="head__point" id="secondP">content</li>
+                <li class="head__point" id="thirdP">video</li>
+                <li class="head__point" id="fourthP">footer</li>
+                <li class="head__point" id="fifthP">fish</li>
+            </ul>
+        </div>
     </header>
     <div class="block">
-        
+
     </div>
     <script src="./search.js"></script>
 </body>
